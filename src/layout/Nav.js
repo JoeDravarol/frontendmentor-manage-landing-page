@@ -73,7 +73,7 @@ const Nav = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      return window.innerWidth < 1440
+      return window.innerWidth < 1280
         ? setState(prevState => ({ ...prevState, mobileView: true }))
         : setState(prevState => ({ ...prevState, mobileView: false }))
     }
@@ -137,7 +137,7 @@ const Nav = () => {
 
   const displayMobile = () => {
     return (
-      <Toolbar className={classes.toolbar}>
+      <Toolbar className={classes.toolbar} disableGutters>
         {manageLogo}
 
         <IconButton
@@ -164,7 +164,7 @@ const Nav = () => {
 
   const displayDesktop = () => {
     return (
-      <Toolbar className={classes.toolbar}>
+      <Toolbar className={classes.toolbar} disableGutters>
         {manageLogo}
 
         <div className={classes.menuButtonsContainer}>
@@ -177,7 +177,7 @@ const Nav = () => {
   }
 
   return (
-    <AppBar className={classes.appbar} position='static' color='transparent' elevation={0}>
+    <AppBar className={classes.appbar} position='absolute' color='transparent' elevation={0}>
       <Container>
         {mobileView ? displayMobile() : displayDesktop()}
       </Container>
