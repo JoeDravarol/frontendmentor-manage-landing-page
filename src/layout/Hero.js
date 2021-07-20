@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginBottom: theme.spacing(8),
     paddingTop: 80,
-    paddingBottom: 80,
     position: 'relative',
     '&::before': {
       content: `url(${backgroundPattern})`,
@@ -42,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     '&::after': {
       content: `url(${backgroundPattern})`,
       position: 'absolute',
-      top: '35%',
+      top: '40%',
       bottom: 0,
       left: '13em',
       right: '-10%',
