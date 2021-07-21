@@ -11,15 +11,16 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const CtaButton = ({ label }) => {
+const CtaButton = ({ label, className, ...props }) => {
   const classes = useStyles()
 
   return (
     <Button
-      className={classes.button}
-      variant='contained'
-      color='primary'
+      className={`${classes.button} ${className}`}
+      variant="contained"
+      color="primary"
       disableElevation
+      {...props}
     >
       {label}
     </Button>
