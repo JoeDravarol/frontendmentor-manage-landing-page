@@ -10,19 +10,30 @@ import backgroundPattern from '../images/bg-tablet-pattern.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    overflow: 'hidden',
+    position: 'relative',
+    overflow: 'visible',
     [theme.breakpoints.up('lg')]: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       '&::after': {
         content: `url(${backgroundPattern})`,
         position: 'absolute',
-        top: '135%',
+        top: '48%',
+        left: '-50%',
         bottom: 0,
-        left: '-42%',
         right: 0,
       },
+    },
+    [theme.breakpoints.up('xl')]: {
+      '&::after': {
+        top: '35%',
+        left: '-60%'
+      }
     }
+  },
+  box: {
+    position: 'relative',
+    zIndex: '5',
   },
   ul: {
     listStyleType: 'none',
@@ -136,7 +147,7 @@ const Services = () => {
       className={classes.root}
       maxWidth={windowSize.width < 1280 ? 600 : null}
     >
-      <Box mb={8}>
+      <Box className={classes.box} mb={8}>
         <Typography
           className={classes.aboutTitle}
           variant="h4"
