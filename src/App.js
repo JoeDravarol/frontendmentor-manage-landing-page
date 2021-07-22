@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials'
 import Layout from './layout/Layout'
 import Hero from './layout/Hero'
 import Services from './layout/Services'
+import CtaBanner from './layout/CtaBanner'
 import { useWindowSize } from './hooks'
 
 const testimonialsData = [
@@ -56,6 +57,7 @@ const App = () => {
       <Hero />
       <Services />
       <Testimonials testimonials={testimonials} />
+      <CtaBanner />
     </Layout>
   )
 }
